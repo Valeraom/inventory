@@ -1,0 +1,13 @@
+@import './variables';
+
+html {
+  font-family: 'Roboto', serif;
+  font-weight: 400;
+  font-size: 12px;
+
+  color: $black;
+}
+
+body {
+  background-color: $light-grey;
+}

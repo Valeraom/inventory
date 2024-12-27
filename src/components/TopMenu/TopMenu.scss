@@ -1,0 +1,61 @@
+@import '/src/assets/styles/variables';
+
+.top-menu {
+  position: relative;
+  padding: 12px 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow: 0 6px 18px $shadow;
+
+  background-color: $white;
+
+  z-index: 5;
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 130px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__img {
+    width: 50px;
+  }
+
+  &__title {
+    font-weight: 600;
+
+    color: $accent;
+
+    text-transform: uppercase;
+  }
+
+  &__search {
+    padding: 4px 10px;
+
+    border: 0.5px solid $dark-grey;
+    border-radius: 4px;
+
+    font-weight: 700;
+
+    background-color: $light-grey;
+
+    &::placeholder {
+      color: $black;
+    }
+
+    &:focus {
+      border: 0.5px solid $dark-grey;
+    }
+  }
+}
