@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './TopMenu.scss';
 import { Paths } from '../../enums';
+import { DateInfo } from '../DateInfo';
 
 export const TopMenu = () => {
   return (
@@ -20,7 +21,7 @@ export const TopMenu = () => {
         <input type="text" placeholder="Поиск" className="top-menu__search" />
       </div>
 
-      <p>Дата и время</p>
+      <DateInfo />
     </div>
   );
 };

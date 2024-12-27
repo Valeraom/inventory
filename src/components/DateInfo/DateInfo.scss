@@ -1,0 +1,23 @@
+.date {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  font-weight: 500;
+
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+
+    background-image: url(../../assets/images/icons/clock.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
