@@ -22,7 +22,7 @@ An application for managing orders and their associated products. Users can add,
 
 ## Demo:
 
-[Todos](https://valeraom.github.io/inventory/)
+[Demo](https://valeraom.github.io/inventory/)
 
 ![Products Page](/src/assets/images/products-page.png)
 ![Orders Page](/src/assets/images/orders-page.png)
