@@ -1,7 +1,9 @@
+import './UsersPage.scss';
+
 export const UsersPage = () => {
   return (
     <div>
-      <p>Пользователи</p>
+      <h1 className="users-page__title">Пользователи</h1>
     </div>
   );
 };

@@ -32,8 +32,8 @@
     right: 10px;
 
     &-icon {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
 
       transition: transform $effectDuration;
     }
@@ -61,10 +61,6 @@
     text-transform: uppercase;
 
     transition: color $effectDuration;
-
-    &:hover {
-      color: $accent-dark;
-    }
 
     &--active::after {
       content: '';

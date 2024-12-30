@@ -53,10 +53,10 @@ export const ModalDeletingOrder = forwardRef<HTMLDivElement, Props>(
               </div>
             </div>
 
-            <div className="modal-footer">
+            <div className="modal-footer modal-footer--deleting">
               <button
                 type="button"
-                className="modal__cancel-btn"
+                className="modal__cancel-btn modal__cancel-btn--deleting"
                 onClick={onClose}
               >
                 Отменить

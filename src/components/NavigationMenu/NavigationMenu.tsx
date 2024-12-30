@@ -5,7 +5,7 @@ import { Paths, PrimaryButtonTypes } from '../../enums';
 import { navigationLinks } from '../../constants';
 
 import { PrimaryButton } from '../PrimaryButton';
-import settingsIcon from '../../assets/images/icons/settings.png';
+import settingsIcon from '../../assets/images/icons/settings.svg';
 import userPhoto from '/src/assets/images/user-photo.png';
 import './NavigationMenu.scss';
 

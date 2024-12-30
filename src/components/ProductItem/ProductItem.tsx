@@ -5,7 +5,7 @@ import { Product } from '../../types';
 import { getFormattedDate } from '../../utils';
 
 import './ProductItem.scss';
-import removeIcon from '../../assets/images/icons/remove-btn.png';
+import removeIcon from '../../assets/images/icons/trash-bin.svg';
 import { ModalDeletingProduct } from '../ModalDeletingProduct';
 
 interface Props {

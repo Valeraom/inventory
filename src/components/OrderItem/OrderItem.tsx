@@ -5,9 +5,9 @@ import { Order } from '../../types';
 import { Currency, PrimaryButtonTypes } from '../../enums';
 import { getProductsTotalPrice, getFormattedDate } from '../../utils';
 
-import productsIcon from '../../assets/images/icons/open-order.png';
-import removeIcon from '../../assets/images/icons/remove-btn.png';
-import rightArrow from '../../assets/images/icons/arrow-right.png';
+import productsIcon from '../../assets/images/icons/open-order.svg';
+import removeIcon from '../../assets/images/icons/trash-bin.svg';
+import rightArrow from '../../assets/images/icons/arrow-right.svg';
 import { ModalDeletingOrder } from '../../components';
 import { PrimaryButton } from '../PrimaryButton';
 import './OrderItem.scss';
@@ -33,6 +33,14 @@ export const OrderItem: FC<Props> = ({
   const modalRef = useRef<HTMLDivElement>(null);
   const modalWindow = useRef<Modal | null>(null);
 
+  const handleOpenModal = () => {
+    modalWindow.current?.show();
+  };
+
+  const handleCloseModal = () => {
+    modalWindow.current?.hide();
+  };
+
   useEffect(() => {
     if (modalRef.current) {
       modalWindow.current = new Modal(modalRef.current);
@@ -43,14 +51,6 @@ export const OrderItem: FC<Props> = ({
       }
     };
   }, []);
-
-  const handleOpenModal = () => {
-    modalWindow.current?.show();
-  };
-
-  const handleCloseModal = () => {
-    modalWindow.current?.hide();
-  };
 
   return (
     <div className="order px-5 py-3">

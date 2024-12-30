@@ -27,17 +27,21 @@
   }
 
   &-footer {
-    background-color: $accent;
+    &--deleting {
+      background-color: $accent;
+    }
   }
 
   &__cancel-btn {
-    margin-right: 20px;
+    &--deleting {
+      margin-right: 20px;
 
-    font-weight: 600;
-    text-transform: uppercase;
+      font-weight: 600;
+      text-transform: uppercase;
 
-    color: $white;
-    background-color: $accent;
+      color: $white;
+      background-color: $accent;
+    }
   }
 
   &__delete-btn {

@@ -1,8 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import './ProductAddingForm.scss';
 import { Product } from '../../types';
 import { ProductTypes } from '../../enums';
 import { exchangeRates } from '../../constants';
+import { ModalError } from '../ModalError';
+import { Modal } from 'bootstrap';
 
 interface Props {
   onAdd: (product: Omit<Product, 'id' | 'date' | 'order'>) => void;
@@ -10,7 +12,7 @@ interface Props {
 }
 
 export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
-  const [serNumber, setSerNumber] = useState<number>(0);
+  const [serNumber, setSerNumber] = useState<number | ''>('');
   const [isNew, setIsNew] = useState<number>(1);
   const [productPhoto, setProductPhoto] = useState<string>('');
   const [title, setTitle] = useState<string>('');
@@ -20,11 +22,16 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
   const [specification, setSpecification] = useState<string>('');
   const [startGuarantee, setStartGuarantee] = useState<string>('');
   const [endGuarantee, setEndGuarantee] = useState<string>('');
-  const [productPrice, setProductPrice] = useState<number>(1);
+  const [productPrice, setProductPrice] = useState<number | ''>('');
 
   const handleAddProduct = () => {
+    if (!startGuarantee || !endGuarantee) {
+      handleOpenModal();
+      return;
+    }
+
     const newProduct = {
-      serialNumber: serNumber,
+      serialNumber: Number(serNumber),
       isNew: isNew,
       photo: productPhoto,
       title: title,
@@ -36,17 +43,39 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
       },
       price: [
         {
-          value: Math.floor(productPrice / exchangeRates.dollar),
+          value: Math.floor(Number(productPrice) / exchangeRates.dollar),
           symbol: 'USD',
           isDefault: 0,
         },
-        { value: productPrice, symbol: 'UAH', isDefault: 1 },
+        { value: Number(productPrice), symbol: 'UAH', isDefault: 1 },
       ],
     };
 
     onAdd(newProduct);
     onCloseProductForm();
   };
+
+  const modalRef = useRef<HTMLDivElement>(null);
+  const modalWindow = useRef<Modal | null>(null);
+
+  const handleOpenModal = () => {
+    modalWindow.current?.show();
+  };
+
+  const handleCloseModal = () => {
+    modalWindow.current?.hide();
+  };
+
+  useEffect(() => {
+    if (modalRef.current) {
+      modalWindow.current = new Modal(modalRef.current);
+    }
+    return () => {
+      if (modalWindow.current) {
+        modalWindow.current.dispose();
+      }
+    };
+  }, []);
 
   return (
     <div className="product-form">
@@ -240,6 +269,12 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
           Добавить продукт
         </button>
       </div>
+
+      <ModalError
+        errorMessage="Заполните все поля ввода"
+        ref={modalRef}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };

@@ -21,6 +21,8 @@
   &__photo {
     width: 50px;
     height: 40px;
+
+    object-fit: contain;
   }
 
   &__main-info {
@@ -28,6 +30,8 @@
   }
 
   &__title {
+    font-size: 16px;
+
     color: $text-dark;
   }
 

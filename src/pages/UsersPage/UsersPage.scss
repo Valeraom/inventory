@@ -1,0 +1,7 @@
+@import '/src/assets/styles/variables';
+
+.users-page {
+  &__title {
+    color: $text-dark;
+  }
+}

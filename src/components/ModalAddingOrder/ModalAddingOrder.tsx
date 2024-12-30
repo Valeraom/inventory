@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
 import { PrimaryButton } from '../PrimaryButton';
 import { PrimaryButtonTypes } from '../../enums';
 
@@ -7,6 +7,8 @@ import { ProductAddingForm } from '../ProductAddingForm';
 import { Order, Product } from '../../types';
 import { getNewId } from '../../utils/getNewId';
 import { useOrders } from '../../hooks/useOrders';
+import { ModalError } from '../ModalError';
+import { Modal } from 'bootstrap';
 
 interface Props {
   onClose: () => void;
@@ -38,6 +40,11 @@ export const ModalAddingOrder = forwardRef<HTMLDivElement, Props>(
     };
 
     const handleAddOrder = () => {
+      if (!date || !title) {
+        handleOpenModal();
+        return;
+      }
+
       const newOrder: Order = {
         id: orderId,
         title: title,
@@ -49,6 +56,28 @@ export const ModalAddingOrder = forwardRef<HTMLDivElement, Props>(
       onAddOrder(newOrder);
       onClose();
     };
+
+    const modalRef = useRef<HTMLDivElement>(null);
+    const modalWindow = useRef<Modal | null>(null);
+
+    const handleOpenModal = () => {
+      modalWindow.current?.show();
+    };
+
+    const handleCloseModal = () => {
+      modalWindow.current?.hide();
+    };
+
+    useEffect(() => {
+      if (modalRef.current) {
+        modalWindow.current = new Modal(modalRef.current);
+      }
+      return () => {
+        if (modalWindow.current) {
+          modalWindow.current.dispose();
+        }
+      };
+    }, []);
 
     useEffect(() => {
       setOrderId(getNewId(orders));
@@ -184,6 +213,12 @@ export const ModalAddingOrder = forwardRef<HTMLDivElement, Props>(
                 </span>
               </PrimaryButton>
             </div>
+
+            <ModalError
+              errorMessage="Заполните все поля ввода"
+              ref={modalRef}
+              onClose={handleCloseModal}
+            />
           </div>
         </div>
       </div>

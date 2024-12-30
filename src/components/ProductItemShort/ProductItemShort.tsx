@@ -3,7 +3,7 @@ import { FC, useEffect, useRef } from 'react';
 import { Product } from '../../types';
 
 import './ProductItemShort.scss';
-import removeIcon from '../../assets/images/icons/remove-btn.png';
+import removeIcon from '../../assets/images/icons/trash-bin.svg';
 import { Modal } from 'bootstrap';
 import { ModalDeletingProduct } from '../ModalDeletingProduct';
 

@@ -11,3 +11,4 @@ export * from './ModalAddingOrder';
 export * from './ProductAddingForm';
 export * from './ModalAddingProduct';
 export * from './ProductItem';
+export * from './ModalError';

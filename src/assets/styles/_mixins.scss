@@ -1,0 +1,9 @@
+@import './variables';
+
+@mixin hover-shadow {
+  transition: box-shadow $effectDuration;
+
+  &:hover {
+    box-shadow: 0 0 18px $shadow-hover;
+  }
+}

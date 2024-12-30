@@ -1,4 +1,5 @@
 @import '/src/assets/styles/variables';
+@import '/src/assets/styles/mixins';
 
 .primary-button {
   width: 40px;
@@ -19,4 +20,6 @@
 
     background-color: $accent;
   }
+
+  @include hover-shadow;
 }
