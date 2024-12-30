@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "title": "Order 1",
+    "date": "2017-06-29 12:09:33",
+    "description": "desc",
+    "products": [
+      {
+        "id": 1,
+        "serialNumber": 65863,
+        "isNew": 1,
+        "photo": "https://content1.rozetka.com.ua/goods/images/big/440994724.jpg",
+        "title": "Samsung Odyssey G50D 27 (LS27DG502EIXCI)",
+        "type": "Monitors",
+        "specification": "Specification 1",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 1,
+        "date": "2017-06-29 12:09:33"
+      },
+      {
+        "id": 2,
+        "serialNumber": 123434,
+        "isNew": 1,
+        "photo": "https://qualvision.com.ua/wp-content/uploads/2021/11/20-1.jpg",
+        "title": "Product 1",
+        "type": "Monitors",
+        "specification": "Specification 2",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 1,
+        "date": "2017-06-29 12:09:33"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Order 2",
+    "date": "2017-06-29 12:09:33",
+    "description": "desc",
+    "products": [
+      {
+        "id": 3,
+        "serialNumber": 124334,
+        "isNew": 0,
+        "photo": "https://content.rozetka.com.ua/goods/images/big/476048815.jpg",
+        "title": "BenQ GW2490E (9H.LMELJ.LBE) 24",
+        "type": "Monitors",
+        "specification": "Specification 3",
+        "guarantee": {
+          "start": "2017-09-09 12:09:33",
+          "end": "2022-05-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 2,
+        "date": "2017-06-29 12:09:33"
+      },
+      {
+        "id": 4,
+        "serialNumber": 1234,
+        "isNew": 1,
+        "photo": "src/assets/images/products/product-1.png",
+        "title": "Product 1",
+        "type": "Monitors",
+        "specification": "Specification 3",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 2,
+        "date": "2017-06-29 12:09:33"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Order 3",
+    "date": "2017-06-29 12:09:33",
+    "description": " Б/УМонитор Gigabyte GS27FC -- FHD Super Speed 27, Б/У телефон Samsung Galaxy Fold 6 12/1TB Silver Shadow, Б/У планшет Lenovo Tab M11 4/128GB LTE",
+    "products": [
+      {
+        "id": 5,
+        "serialNumber": 1234,
+        "isNew": 0,
+        "photo": "https://content1.rozetka.com.ua/goods/images/big/490353707.jpg",
+        "title": "Gigabyte GS27FC -- FHD Super Speed 27",
+        "type": "Monitors",
+        "specification": "Specification 2",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 3,
+        "date": "2017-06-29 12:09:33"
+      },
+      {
+        "id": 6,
+        "serialNumber": 1222234,
+        "isNew": 0,
+        "photo": "https://content.rozetka.com.ua/goods/images/big/449033218.jpg",
+        "title": "Samsung Galaxy Fold 6 12/1TB Silver Shadow",
+        "type": "Phones",
+        "specification": "Specification 1",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 3,
+        "date": "2017-06-29 12:09:33"
+      },
+      {
+        "id": 7,
+        "serialNumber": 1222234,
+        "isNew": 0,
+        "photo": "https://content2.rozetka.com.ua/goods/images/big/401292769.jpg",
+        "title": "Lenovo Tab M11 4/128GB LTE",
+        "type": "Tablets",
+        "specification": "Specification 2",
+        "guarantee": {
+          "start": "2017-06-29 12:09:33",
+          "end": "2017-06-29 12:09:33"
+        },
+        "price": [
+          { "value": 100, "symbol": "USD", "isDefault": 0 },
+          { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+        ],
+        "order": 3,
+        "date": "2017-06-29 12:09:33"
+      }
+    ]
+  }
+]
