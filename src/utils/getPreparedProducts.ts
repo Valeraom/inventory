@@ -1,3 +1,4 @@
+import { ProductSpecification, ProductTypes } from '../enums';
 import { Product } from '../types';
 
 type QueryType = {
@@ -22,13 +23,13 @@ export const getPreparedProducts = (
     });
   }
 
-  if (typeQuery) {
+  if (typeQuery !== ProductTypes.ALL) {
     preparedProducts = preparedProducts.filter(
       product => product.type === typeQuery,
     );
   }
 
-  if (specificationQuery) {
+  if (specificationQuery !== ProductSpecification.ALL) {
     preparedProducts = preparedProducts.filter(
       product => product.specification === specificationQuery,
     );

@@ -12,10 +12,9 @@ export const ProductsPage = () => {
   const { orders } = useOrders();
   const { searchQuery } = useSeacrhQuery();
 
-  const [typeParam, setTypeParam] = useState<ProductTypes | ''>('');
-  const [specificationParam, setSpecificationParam] = useState<
-    ProductSpecification | ''
-  >('');
+  const [typeParam, setTypeParam] = useState<ProductTypes>(ProductTypes.ALL);
+  const [specificationParam, setSpecificationParam] =
+    useState<ProductSpecification>(ProductSpecification.ALL);
 
   const allProducts = orders.reduce<Product[]>((acc, order: Order) => {
     return [...acc, ...order.products];
@@ -48,6 +47,7 @@ export const ProductsPage = () => {
               setTypeParam(event.currentTarget.value as ProductTypes)
             }
           >
+            <option value={ProductTypes.ALL}>Все</option>
             <option value={ProductTypes.MONITORS}>Мониторы</option>
             <option value={ProductTypes.PHONES}>Смартфоны</option>
             <option value={ProductTypes.TABLETS}>Планшеты</option>
@@ -72,6 +72,7 @@ export const ProductsPage = () => {
               )
             }
           >
+            <option value={ProductSpecification.ALL}>Все</option>
             <option value={ProductSpecification.SPECIFICATION1}>
               Спецификация 1
             </option>
