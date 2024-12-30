@@ -1,10 +1,12 @@
-import { FC, useEffect, useRef, useState } from 'react';
-import './ProductAddingForm.scss';
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
+import { Modal } from 'bootstrap';
+
 import { Product } from '../../types';
 import { ProductSpecification, ProductTypes } from '../../enums';
 import { exchangeRates } from '../../constants';
+
 import { ModalError } from '../ModalError';
-import { Modal } from 'bootstrap';
+import './ProductAddingForm.scss';
 
 interface Props {
   onAdd: (product: Omit<Product, 'id' | 'date' | 'order'>) => void;
@@ -23,6 +25,22 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
   const [startGuarantee, setStartGuarantee] = useState<string>('');
   const [endGuarantee, setEndGuarantee] = useState<string>('');
   const [productPrice, setProductPrice] = useState<number | ''>('');
+
+  const handleChangeSerNumber = (event: ChangeEvent<HTMLInputElement>) => {
+    if (!Number(event.currentTarget.value)) {
+      return;
+    }
+
+    setSerNumber(Number(event.currentTarget.value));
+  };
+
+  const handleChangePrice = (event: ChangeEvent<HTMLInputElement>) => {
+    if (!Number(event.currentTarget.value)) {
+      return;
+    }
+
+    setProductPrice(Number(event.currentTarget.value));
+  };
 
   const handleAddProduct = () => {
     if (!startGuarantee || !endGuarantee) {
@@ -94,7 +112,7 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
           type="text"
           placeholder="Серийный номер"
           value={serNumber}
-          onChange={event => setSerNumber(Number(event.currentTarget.value))}
+          onChange={handleChangeSerNumber}
         />
       </div>
 
@@ -262,7 +280,7 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
           type="text"
           placeholder="Цена"
           value={productPrice}
-          onChange={event => setProductPrice(Number(event.currentTarget.value))}
+          onChange={handleChangePrice}
         />
       </div>
 
