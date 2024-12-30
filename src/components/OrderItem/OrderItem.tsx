@@ -1,16 +1,16 @@
 import { Modal } from 'bootstrap';
 import { FC, useEffect, useRef } from 'react';
+
 import { Order } from '../../types';
-import { PrimaryButton } from '../PrimaryButton';
 import { Currency, PrimaryButtonTypes } from '../../enums';
+import { getProductsTotalPrice, getFormattedDate } from '../../utils';
 
 import productsIcon from '../../assets/images/icons/open-order.png';
 import removeIcon from '../../assets/images/icons/remove-btn.png';
 import rightArrow from '../../assets/images/icons/arrow-right.png';
-import { getProductsTotalPrice } from '../../utils';
-import './OrderItem.scss';
-import { getFormattedOrderDate } from '../../utils/getFormattedOrderDate';
 import { ModalDeletingOrder } from '../../components';
+import { PrimaryButton } from '../PrimaryButton';
+import './OrderItem.scss';
 
 interface Props {
   order: Order;
@@ -81,7 +81,7 @@ export const OrderItem: FC<Props> = ({
         <p className="order__count-label">Продукта</p>
       </div>
 
-      <p className="order__date">{getFormattedOrderDate(date)}</p>
+      <p className="order__date">{getFormattedDate(date)}</p>
 
       {!selectedOrderId && (
         <div className="order__price">

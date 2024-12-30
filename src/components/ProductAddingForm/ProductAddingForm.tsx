@@ -149,6 +149,8 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
           }
         >
           <option value={ProductTypes.MONITORS}>Мониторы</option>
+          <option value={ProductTypes.PHONES}>Смартфоны</option>
+          <option value={ProductTypes.TABLETS}>Планшеты</option>
         </select>
       </div>
 

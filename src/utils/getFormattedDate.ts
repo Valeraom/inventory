@@ -1,6 +1,6 @@
 import { months } from '../constants';
 
-export const getFormattedOrderDate = (fullDate: string) => {
+export const getFormattedDate = (fullDate: string) => {
   const date = fullDate.split(' ')[0].split('-');
   const year = date[0];
   const month = months[Number(date[1].replace('0', '')) - 1];

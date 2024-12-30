@@ -1,0 +1,29 @@
+@import '/src/assets/styles/variables';
+
+.product-page {
+  &__title {
+    color: $text-dark;
+  }
+  
+  &__top-section {
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__input {
+    padding: 6px;
+    width: 300px;
+
+    border: 1px solid $border;
+    border-radius: 5px;
+  }
+}

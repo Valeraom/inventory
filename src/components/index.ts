@@ -10,3 +10,4 @@ export * from './ModalDeletingProduct';
 export * from './ModalAddingOrder';
 export * from './ProductAddingForm';
 export * from './ModalAddingProduct';
+export * from './ProductItem';

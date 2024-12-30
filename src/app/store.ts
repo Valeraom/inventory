@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import ordersReducer from '../features/orders/ordersSlice';
+import searchQueryReducer from '../features/searchQuery/searchQuerySlice';
 
 const store = configureStore({
   reducer: {
     orders: ordersReducer,
+    searchQuery: searchQueryReducer,
   },
 });
 

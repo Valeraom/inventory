@@ -1,7 +1,7 @@
 import { ForwardedRef, forwardRef } from 'react';
 import './ModalDeletingOrder.scss';
 import { Order } from '../../types';
-import { getFormattedOrderDate } from '../../utils/getFormattedOrderDate';
+import { getFormattedDate } from '../../utils/getFormattedDate';
 import { getProductsTotalPrice } from '../../utils';
 import { Currency, PrimaryButtonTypes } from '../../enums';
 import { PrimaryButton } from '../PrimaryButton';
@@ -18,7 +18,7 @@ export const ModalDeletingOrder = forwardRef<HTMLDivElement, Props>(
 
     const { onRemoveOrder } = useOrders();
 
-    const formattedDate = getFormattedOrderDate(date);
+    const formattedDate = getFormattedDate(date);
 
     const totalPriceUAH = getProductsTotalPrice(products, Currency.UAH);
     const totalPriceUSD = getProductsTotalPrice(products, Currency.USD);
@@ -46,9 +46,9 @@ export const ModalDeletingOrder = forwardRef<HTMLDivElement, Props>(
                 <p className="modal-order__date">{formattedDate}</p>
 
                 <div className="modal-order__price">
-                  <p className="modal-order__price--uah">{totalPriceUAH} UAH</p>
-
                   <p className="modal-order__price--usd">{totalPriceUSD} USD</p>
+
+                  <p className="modal-order__price--uah">{totalPriceUAH} UAH</p>
                 </div>
               </div>
             </div>

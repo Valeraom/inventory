@@ -31,7 +31,7 @@
         "photo": "src/assets/images/products/product-1.png",
         "title": "Product 1",
         "type": "Monitors",
-        "specification": "Specification 1",
+        "specification": "Specification 2",
         "guarantee": {
           "start": "2017-06-29 12:09:33",
           "end": "2017-06-29 12:09:33"
