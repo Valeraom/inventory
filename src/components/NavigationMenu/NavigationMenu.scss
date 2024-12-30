@@ -8,10 +8,13 @@
   max-width: 220px;
   height: 100vh;
 
-  box-shadow: 6px 0px 18px $shadow;
+  color: $text-dark;
   background-color: $white;
 
+  box-shadow: 6px 0px 18px $shadow;
+
   &__avatar {
+    position: relative;
     margin-bottom: 50px;
   }
 
@@ -21,6 +24,23 @@
     display: block;
 
     margin: 0 auto;
+  }
+
+  &__settings {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+
+    &-icon {
+      width: 14px;
+      height: 14px;
+
+      transition: transform $effectDuration;
+    }
+
+    &:hover &-icon {
+      transform: rotate(90deg);
+    }
   }
 
   &__list {
@@ -39,6 +59,12 @@
     font-weight: 700;
 
     text-transform: uppercase;
+
+    transition: color $effectDuration;
+
+    &:hover {
+      color: $accent-dark;
+    }
 
     &--active::after {
       content: '';

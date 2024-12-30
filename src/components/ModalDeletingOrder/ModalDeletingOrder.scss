@@ -1,0 +1,73 @@
+@import '/src/assets/styles/variables';
+
+.modal {
+  &-dialog {
+    max-width: 800px;
+  }
+
+  &-content {
+    border: none;
+    border-radius: 6px;
+  }
+
+  &-body {
+    padding: 30px;
+  }
+
+  &-title {
+    padding: 18px;
+
+    color: $text-dark;
+  }
+
+  &-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-footer {
+    background-color: $accent;
+  }
+
+  &__cancel-btn {
+    margin-right: 20px;
+
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $white;
+    background-color: $accent;
+  }
+
+  &__delete-btn {
+    padding: 10px 26px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $text-danger;
+    background-color: $white;
+  }
+
+  &__delete-icon {
+    width: 10px;
+    height: 10px;
+
+    background-image: url(/src/assets/images/icons/trash-bin-red.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__close {
+    position: absolute;
+    right: -18px;
+    top: -18px;
+  }
+}

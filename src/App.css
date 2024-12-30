@@ -1,0 +1,14 @@
+.container {
+  max-width: 1980px;
+  padding: 0;
+}
+
+
+.row {
+  margin: 0;
+}
+
+
+.main {
+  padding: 70px 100px;
+}

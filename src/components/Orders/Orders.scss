@@ -1,0 +1,14 @@
+@import '/src/assets/styles/variables';
+
+.orders {
+  display: flex;
+  gap: 10px;
+
+  &__list {
+    flex: 2;
+  }
+
+  &__order-info {
+    flex: 4;
+  }
+}

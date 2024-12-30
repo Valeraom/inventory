@@ -2,14 +2,15 @@
 
 .top-menu {
   position: relative;
-  padding: 12px 0;
+  padding: 12px 210px;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   box-shadow: 0 6px 18px $shadow;
 
+  color: $text-dark;
   background-color: $white;
 
   z-index: 5;
@@ -42,20 +43,21 @@
 
   &__search {
     padding: 4px 10px;
+    width: 370px;
 
-    border: 0.5px solid $dark-grey;
+    border: 0.5px solid $border;
     border-radius: 4px;
 
     font-weight: 700;
 
-    background-color: $light-grey;
+    background-color: $bg;
 
     &::placeholder {
-      color: $black;
+      color: $text;
     }
 
     &:focus {
-      border: 0.5px solid $dark-grey;
+      border: 0.5px solid $border;
     }
   }
 }

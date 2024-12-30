@@ -1,0 +1,21 @@
+@import '/src/assets/styles/variables';
+
+.modal {
+  &-new-products {
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    color: $text-dark;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

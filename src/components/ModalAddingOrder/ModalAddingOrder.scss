@@ -1,0 +1,80 @@
+@import '/src/assets/styles/variables';
+
+.modal {
+  &-add-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__order-form {
+      flex: 1;
+    }
+
+    &__input-container {
+      margin-bottom: 14px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__input {
+      padding: 6px;
+
+      border: 1px solid $border;
+      border-radius: 5px;
+    }
+
+    &__label {
+      color: $text-dark;
+    }
+
+    &__products {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__product-form {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__add-product {
+      padding: 6px 14px;
+
+      display: flex;
+      align-items: center;
+
+      border-radius: 30px;
+
+      font-size: 12px;
+      font-weight: 400;
+
+      color: $white;
+      background-color: $accent;
+    }
+  }
+
+  &__add-btn {
+    padding: 10px 26px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $text-dark;
+    background-color: $white;
+  }
+
+  &-footer {
+    padding: 16px 18px 20px;
+  }
+}

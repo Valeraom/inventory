@@ -1,0 +1,22 @@
+@import '/src/assets/styles/variables';
+
+.orders-page {
+  &__top-section {
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    color: $text-dark;
+  }
+
+  &__btn-plus {
+    width: 26px;
+    height: 26px;
+
+    font-size: 18px;
+
+    color: $white;
+  }
+}

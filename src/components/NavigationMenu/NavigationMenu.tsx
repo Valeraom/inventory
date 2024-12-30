@@ -1,10 +1,13 @@
-import { Link, NavLink } from 'react-router-dom';
-
-import userPhoto from '/src/assets/images/user-photo.png';
-import { navigationLinks } from '../../constants';
-import './NavigationMenu.scss';
-import { Paths } from '../../enums';
+import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
+
+import { Paths, PrimaryButtonTypes } from '../../enums';
+import { navigationLinks } from '../../constants';
+
+import { PrimaryButton } from '../PrimaryButton';
+import settingsIcon from '../../assets/images/icons/settings.png';
+import userPhoto from '/src/assets/images/user-photo.png';
+import './NavigationMenu.scss';
 
 const getLinkClass = ({ isActive }: { isActive: boolean }) => {
   return cn('navigation-menu__link', {
@@ -21,13 +24,22 @@ export const NavigationMenu = () => {
           alt="User Photo"
           className="navigation-menu__photo"
         />
-        <Link to={Paths.SETTINGS} className="navigation-menu__settings"></Link>
+
+        <div className="navigation-menu__settings">
+          <PrimaryButton type={PrimaryButtonTypes.LINK} path={Paths.SETTINGS}>
+            <img
+              src={settingsIcon}
+              alt="Settings"
+              className="navigation-menu__settings-icon"
+            />
+          </PrimaryButton>
+        </div>
       </div>
 
       <nav>
         <ul className="navigation-menu__list">
           {navigationLinks.map(link => (
-            <li>
+            <li key={link.title}>
               <NavLink to={link.path} className={getLinkClass}>
                 {link.title}
               </NavLink>
