@@ -5,10 +5,16 @@ import { useOrders } from '../../hooks/useOrders';
 
 import './OrdersPage.scss';
 import { Modal } from 'bootstrap';
+import { getPreparedOrders } from '../../utils';
+import { useSeacrhQuery } from '../../hooks';
 
 export const OrdersPage = () => {
   const { orders } = useOrders();
+  const { searchQuery } = useSeacrhQuery();
 
+  const preparedOrders = getPreparedOrders(orders, {
+    searchQuery: searchQuery.orders,
+  });
   const modalRef = useRef<HTMLDivElement>(null);
   const modalWindow = useRef<Modal | null>(null);
 
@@ -42,7 +48,7 @@ export const OrdersPage = () => {
           <p className="orders-page__btn-plus">+</p>
         </PrimaryButton>
 
-        <h1 className="orders-page__title">{`Приходы / ${orders.length}`}</h1>
+        <h1 className="orders-page__title">{`Приходы / ${preparedOrders.length}`}</h1>
       </div>
 
       <Orders />
