@@ -18,6 +18,10 @@ An application for managing orders and their associated products. Users can add,
 - **User-Friendly Interface**: Intuitive design with Bootstrap and BEM methodology for easy navigation.
 
 ## Demo:
+<<<<<<< HEAD
+=======
+
+>>>>>>> f16e857805ff758eed41989ec6b8c11f3074caeb
 [Demo](https://valeraom.github.io/inventory/)
 
 ![Products Page](/src/assets/images/products-page.png)
