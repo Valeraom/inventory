@@ -6,6 +6,7 @@ import { Paths } from '../../enums';
 
 import './TopMenu.scss';
 import { DateInfo } from '../DateInfo';
+import logo from '../../assets/images/logo.png';
 
 export const TopMenu = () => {
   const location = useLocation();
@@ -27,11 +28,7 @@ export const TopMenu = () => {
       <div className="top-menu__left">
         <Link to={Paths.HOME}>
           <div className="top-menu__logo">
-            <img
-              src="./src/assets/images/logo.png"
-              alt="Logo"
-              className="top-menu__img"
-            />
+            <img src={logo} alt="Logo" className="top-menu__img" />
             <p className="top-menu__title">Inventory</p>
           </div>
         </Link>
