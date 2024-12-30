@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://valeraom.github.io/inventory",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -11,7 +12,9 @@
     "lint": "eslint . --fix",
     "fix-style": "npm run format & npm run lint",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
