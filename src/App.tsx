@@ -1,15 +1,16 @@
 import { Outlet, useLocation } from 'react-router-dom';
-
-import './assets/styles/_reset.scss';
-import './assets/styles/_normalize.scss';
-import './App.css';
-import { NavigationMenu, TopMenu } from './components';
+import { useEffect } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useDispatch } from 'react-redux';
+
 import { AppDispatch } from './app/store';
 import { getOrders } from './api';
 import { loadOrders } from './features/orders/ordersSlice';
-import { useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+import { NavigationMenu, TopMenu } from './components';
+import './assets/styles/_reset.scss';
+import './assets/styles/_normalize.scss';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();

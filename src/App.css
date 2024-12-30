@@ -13,12 +13,14 @@
 }
 
 .main {
-  padding: 70px 100px;
+  padding: 70px 70px 70px 60px;
 }
+
 .fade-enter {
   transform: translateX(-100%);
   opacity: 0;
 }
+
 .fade-enter-active {
   transform: translateX(0);
   opacity: 1;
@@ -26,10 +28,12 @@
     transform 300ms,
     opacity 300ms;
 }
+
 .fade-exit {
   transform: translateX(0);
   opacity: 1;
 }
+
 .fade-exit-active {
   transform: translateX(100%);
   opacity: 0;

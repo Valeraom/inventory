@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import './ProductAddingForm.scss';
 import { Product } from '../../types';
-import { ProductTypes } from '../../enums';
+import { ProductSpecification, ProductTypes } from '../../enums';
 import { exchangeRates } from '../../constants';
 import { ModalError } from '../ModalError';
 import { Modal } from 'bootstrap';
@@ -191,15 +191,24 @@ export const ProductAddingForm: FC<Props> = ({ onAdd, onCloseProductForm }) => {
           Укажите спецификацию
         </label>
 
-        <input
+        <select
           id="product-form__input-spec"
           className="product-form__input"
-          name="product-spec"
-          type="text"
-          placeholder="Спецификация"
           value={specification}
-          onChange={event => setSpecification(event.currentTarget.value)}
-        />
+          onChange={event =>
+            setSpecification(event.currentTarget.value as ProductSpecification)
+          }
+        >
+          <option value={ProductSpecification.SPECIFICATION1}>
+            Спецификация 1
+          </option>
+          <option value={ProductSpecification.SPECIFICATION2}>
+            Спецификация 2
+          </option>
+          <option value={ProductSpecification.SPECIFICATION3}>
+            Спецификация 3
+          </option>
+        </select>
       </div>
 
       <div className="modal-add-form__input-container">
