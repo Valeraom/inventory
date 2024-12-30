@@ -1,9 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import './TopMenu.scss';
-import { Paths } from '../../enums';
-import { DateInfo } from '../DateInfo';
-import { useSeacrhQuery } from '../../hooks/useSearchQuery';
 import { ChangeEvent } from 'react';
+import { useSeacrhQuery } from '../../hooks/useSearchQuery';
+
+import { Paths } from '../../enums';
+
+import './TopMenu.scss';
+import { DateInfo } from '../DateInfo';
 
 export const TopMenu = () => {
   const location = useLocation();
@@ -26,7 +28,7 @@ export const TopMenu = () => {
         <Link to={Paths.HOME}>
           <div className="top-menu__logo">
             <img
-              src=".src/assets/images/logo.png"
+              src="/src/assets/images/logo.png"
               alt="Logo"
               className="top-menu__img"
             />
