@@ -14,13 +14,13 @@
   background-color: $white;
 
   &__title {
-    flex-grow: 5;
+    width: 650px;
 
     font-weight: 400;
   }
 
   &__products-btn {
-    flex-grow: 1;
+    width: 80px;
   }
 
   &__products-icon {
@@ -29,30 +29,39 @@
   }
 
   &__count-container {
-    flex-grow: 1;
+    width: 100px;
+
+    text-align: center;
   }
 
   &__count {
     font-size: 18px;
+    text-align: center;
   }
 
   &__count-label {
+    text-align: center;
+
     color: $text-light;
   }
 
   &__date {
+    width: 150px;
     margin-right: 26px;
 
-    flex-grow: 2;
+    text-align: center;
   }
 
   &__price {
+    width: 300px;
     margin-right: 26px;
 
-    flex-grow: 2;
+    text-align: center;
   }
 
   &__remove-btn {
+    width: 50px;
+
     background-color: $white;
   }
 

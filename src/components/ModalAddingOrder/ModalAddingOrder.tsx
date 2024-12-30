@@ -1,14 +1,15 @@
 import { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
-import { PrimaryButton } from '../PrimaryButton';
+import { Modal } from 'bootstrap';
+
+import { Order, Product } from '../../types';
+import { getNewId } from '../../utils/getNewId';
+import { useOrders } from '../../hooks/useOrders';
 import { PrimaryButtonTypes } from '../../enums';
 
 import './ModalAddingOrder.scss';
 import { ProductAddingForm } from '../ProductAddingForm';
-import { Order, Product } from '../../types';
-import { getNewId } from '../../utils/getNewId';
-import { useOrders } from '../../hooks/useOrders';
 import { ModalError } from '../ModalError';
-import { Modal } from 'bootstrap';
+import { PrimaryButton } from '../PrimaryButton';
 
 interface Props {
   onClose: () => void;
@@ -152,14 +153,32 @@ export const ModalAddingOrder = forwardRef<HTMLDivElement, Props>(
                   </div>
 
                   <div className="modal-add-form__products">
-                    <p className="modal-add-form__label">Товары:</p>
+                    <p className="modal-add-form__products-label">Товары</p>
 
                     <ul className="modal-add-form__products-list">
                       {products.length === 0 ? (
                         <p>Товаров нет</p>
                       ) : (
                         products.map(product => (
-                          <li key={product.id}>{product.title}</li>
+                          <div className="modal-add-form__item">
+                            <div className="modal-add-form__indicator me-3"></div>
+
+                            <img
+                              src={product.photo}
+                              alt="Фото продукта"
+                              className="modal-add-form__photo me-3"
+                            />
+
+                            <div className="modal-add-form__main-info me-5">
+                              <h4 className="modal-add-form__title">
+                                {product.title}
+                              </h4>
+
+                              <p className="modal-add-form__serial-num">
+                                {product.serialNumber}
+                              </p>
+                            </div>
+                          </div>
                         ))
                       )}
                     </ul>

@@ -39,15 +39,47 @@
     color: $text-dark;
   }
 
+  &__guarantee {
+    width: 150px;
+  }
+
+  &__is-new {
+    width: 100px;
+  }
+
+  &__price {
+    width: 100px;
+  }
+
   &__serial-num {
     color: $text-light;
   }
 
+  &__group {
+    width: 100px;
+  }
+
   &__status {
+    width: 50px;
+
     color: $secondary-accent;
   }
 
+  &__client {
+    width: 50px;
+  }
+
+  &__order {
+    width: 50px;
+  }
+
+  &__order-date {
+    width: 50px;
+  }
+
   &__remove-btn {
+    width: 50px;
+
     background-color: $white;
   }
 

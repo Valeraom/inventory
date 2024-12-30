@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import './assets/styles/_reset.scss';
 import './assets/styles/_normalize.scss';
@@ -9,9 +9,11 @@ import { AppDispatch } from './app/store';
 import { getOrders } from './api';
 import { loadOrders } from './features/orders/ordersSlice';
 import { useEffect } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
+  const location = useLocation();
 
   const fetchOrders = () => {
     getOrders()
@@ -38,7 +40,16 @@ function App() {
           <NavigationMenu />
         </div>
         <div className="main col-10">
-          <Outlet />
+          <TransitionGroup>
+            <CSSTransition
+              key={location.pathname}
+              timeout={700}
+              classNames="fade"
+              unmountOnExit
+            >
+              <Outlet />
+            </CSSTransition>
+          </TransitionGroup>
         </div>
       </div>
     </div>

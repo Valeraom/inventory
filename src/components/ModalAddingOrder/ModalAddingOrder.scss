@@ -26,13 +26,59 @@
       border-radius: 5px;
     }
 
+    &__item {
+      padding: 10px 20px;
+
+      display: flex;
+      align-items: center;
+
+      border-top: 1px solid $border;
+    }
+
     &__label {
       color: $text-dark;
     }
 
+    &__indicator {
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background-color: $secondary-accent;
+    }
+
+    &__photo {
+      width: 50px;
+      height: 40px;
+
+      object-fit: contain;
+    }
+
+    &__main-info {
+      width: 150px;
+    }
+
+    &__title {
+      font-size: 12px;
+
+      color: $text-dark;
+    }
+
+    &__serial-num {
+      color: $text-light;
+    }
+
     &__products {
-      display: flex;
-      justify-content: space-between;
+      &-label {
+        margin-bottom: 20px;
+
+        text-align: center;
+      }
+
+      &-list {
+        text-align: center;
+      }
     }
 
     &__product-form {
