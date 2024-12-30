@@ -28,7 +28,7 @@ export const TopMenu = () => {
         <Link to={Paths.HOME}>
           <div className="top-menu__logo">
             <img
-              src="/src/assets/images/logo.png"
+              src="./src/assets/images/logo.png"
               alt="Logo"
               className="top-menu__img"
             />
